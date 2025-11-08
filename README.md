@@ -1,7 +1,7 @@
-# BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Report Generation
+# MARE: Multimodal Analogical Reasoning for Disease Evolution-Aware Radiology Report Generation
 
 ## Introduction
-Radiology report generation (RRG) aims to automatically describe medical images via free-text reports. In clinical practice, comparing current and prior chest X-rays is essential for assessing disease progression, motivating the development of longitudinal RRG methods. However, most existing approaches often struggle to capture fine-grained temporal changes, as they often rely on unidirectional alignments or static reasoning pipelines, overlooking the bidirectional and asymmetric nature of disease evolution. To address these challenges, we propose BiOTPrompt, a novel framework for disease evolution-aware report generation, which introduces a Bidirectional Optimal Transport (BiOT) mechanism to explicitly model progression dynamics between historical and current chest X-rays. By analyzing the asymmetry between bidirectional transport plans, BiOTPrompt can identify newly emerged and resolved regions, which are then used to construct dynamic prompts that guide large language models (LLMs) in generating clinically relevant diagnostic reports. Furthermore, we incorporate a vision-language consistency constraint to ensure alignment between visual evidence and textual descriptions, mitigating hallucinations and enhancing factual accuracy. Extensive experiments on the Longitudinal-MIMIC dataset demonstrate that BiOTPrompt achieves state-of-the-art performance in both language quality metrics and clinical relevance, setting a new benchmark for longitudinal radiology report generation.
+Radiology report generation from longitudinal medical data is critical for assessing disease progression and automating diagnostic workflows. While recent methods incorporate longitudinal information, they primarily rely on multimodal feature fusion, with limited capacity for explicit disease evolution modeling and temporal reasoning. To address this, we propose MARE, an end-to-end framework that formulates longitudinal radiology report generation as a multimodal analogical reasoning task. Inspired by the Abduction–Mapping–Induction paradigm, MARE models latent relational structures underlying disease evolution by aligning lesion-level visual features across time and mapping them to the textual domain for temporally coherent and clinically meaningful report generation. To mitigate the spatial misalignment caused by patient positioning or imaging variation, we introduce an Adaptive Region Alignment (ARA) module for robust temporal correspondence. Additionally, we design Dual Evolution Consistency (DEC) losses to regularize analogical reasoning by enforcing temporal coherence in both visual and textual evolution paths. Extensive experiments on the Longitudinal-MIMIC dataset demonstrate that MARE significantly outperforms state-of-the-art baselines across both natural language generation and clinical effectiveness metrics, highlighting the value of structured analogical reasoning for disease evolution-aware report generation. 
 
 ## Getting Started
 ### Installation
@@ -11,7 +11,7 @@ Radiology report generation (RRG) aims to automatically describe medical images 
 Git clone our repository and install the requirements.
 
 ```bash
-cd BiOTPrompt
+cd MARE
 pip install -r requirements.txt
 ```
 
